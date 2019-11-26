@@ -1,5 +1,12 @@
-package Entity;
+package com.vegetablechicken.plantrecognition.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "comment")
 public class Comment {
     public String getTid() {
         return tid;
@@ -25,7 +32,10 @@ public class Comment {
         this.content = content;
     }
 
+    @Id
+    @Column(name = "thought_id",length = 50)
     private String tid;
+    @Column(name = "user_id",length = 50)
     private String userid;
     private String content;
 }

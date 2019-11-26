@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class AccountPK implements Serializable {
-
+public class LikePK implements Serializable {
+    private String userid;
+    private String pid;
 }

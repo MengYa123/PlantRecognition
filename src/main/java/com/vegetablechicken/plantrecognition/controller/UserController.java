@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
     @GetMapping("hello")
     private String hello(){
         User user = new User();
-        return  "hello";
+        user.setUserid("meng");
+        userRepository.save(user);
+
+        return "hello";
     }
 }

@@ -8,6 +8,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "thought")
 public class Thought {
+    @Id
+    @Column(name = "thought_id",length = 50)
+    private String tid;
+    @Column(name = "user_id",length = 50)
+    private String userid;
+    private String content;
+    @Column(name = "likes_num")
+    private int likes;
+
     public String getTid() {
         return tid;
     }
@@ -40,13 +49,6 @@ public class Thought {
         this.likes = likes;
     }
 
-    @Id
-    @Column(name = "thought_id",length = 50)
-    private String tid;
-    @Column(name = "user_id",length = 50)
-    private String userid;
-    private String content;
-    @Column(name = "likes_num")
-    private int likes;
+
 
 }

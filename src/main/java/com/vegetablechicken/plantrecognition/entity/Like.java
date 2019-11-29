@@ -1,10 +1,18 @@
 package com.vegetablechicken.plantrecognition.entity;
 
 import com.vegetablechicken.plantrecognition.primaryKey.LikePK;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "user_like")
 @IdClass(LikePK.class)
 public class Like {
@@ -16,19 +24,5 @@ public class Like {
     @Column(name = "plant_id",length = 50)
     private String pid;
 
-    public String getUserid() {
-        return userid;
-    }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pid) {
-        this.pid = pid;
-    }
 }

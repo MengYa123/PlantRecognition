@@ -15,12 +15,17 @@ public class UserService  {
 
     public String login(String username,String password){
         Optional<User> user=userRepository.findById(username);
-        if(user.get().getUserid().equals(user.get().getPassword())){
+        if(user.get().getPassword().equals(password)){
             return "login succeed";
         }
         else{
             return "login failed";
         }
 
+    }
+
+    public String signup(String username,String password){
+
+        return "test";
     }
 }

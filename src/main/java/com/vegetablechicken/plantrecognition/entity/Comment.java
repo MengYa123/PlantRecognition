@@ -1,11 +1,20 @@
 package com.vegetablechicken.plantrecognition.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "comment")
 public class Comment {
     @Id
@@ -15,29 +24,7 @@ public class Comment {
     private String userid;
     private String content;
 
-    public String getTid() {
-        return tid;
-    }
 
-    public void setTid(String tid) {
-        this.tid = tid;
-    }
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 
 
 }

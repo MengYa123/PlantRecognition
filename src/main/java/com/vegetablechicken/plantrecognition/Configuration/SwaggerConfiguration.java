@@ -19,8 +19,8 @@ public class SwaggerConfiguration {
 
         private ApiInfo apiInfo() {
             return new ApiInfoBuilder()
-                    .title("plantrecognitation接口文档")
-                    .description("vegetablechicken")
+                    .title("Plant Recognitation 接口文档")
+                    .description("VegetableChicken")
                     .version("1.0")
                     .build();
         }

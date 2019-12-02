@@ -32,4 +32,6 @@ public class UserController {
     public String signup(@RequestBody UserRequest userRequest){
         return userService.signup(userRequest.getUserId(),userRequest.getPassword());
     }
+
+
 }

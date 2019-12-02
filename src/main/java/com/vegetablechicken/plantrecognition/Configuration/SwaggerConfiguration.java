@@ -20,7 +20,7 @@ public class SwaggerConfiguration {
         private ApiInfo apiInfo() {
             return new ApiInfoBuilder()
                     .title("Plant Recognitation 接口文档")
-                    .description("VegetableChicken")
+                    .description("Just the right amount of everything.")
                     .version("1.0")
                     .build();
         }

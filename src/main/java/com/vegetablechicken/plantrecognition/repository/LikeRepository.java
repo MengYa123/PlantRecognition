@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface LikeRepository extends PagingAndSortingRepository<Like, LikePK> {
     List<Like> findByUseridAndPid(String userid, String pid);
-
-
+    void deleteByUseridAndPid(String userid, String pid);
+    List<Like> findByUserid(String userid);
 }

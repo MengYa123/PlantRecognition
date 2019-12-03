@@ -18,6 +18,8 @@ import javax.persistence.Table;
 @Table(name = "comment")
 public class Comment {
     @Id
+    @Column(name="comment_id",length=50)
+    private String cid;
     @Column(name = "thought_id",length = 50)
     private String tid;
     @Column(name = "user_id",length = 50)

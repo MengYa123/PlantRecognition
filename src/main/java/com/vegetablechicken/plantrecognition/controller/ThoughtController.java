@@ -1,18 +1,16 @@
 package com.vegetablechicken.plantrecognition.controller;
 
 
+import com.vegetablechicken.plantrecognition.entity.Thought;
 import com.vegetablechicken.plantrecognition.request.ThoughtRequest;
-import com.vegetablechicken.plantrecognition.request.UserRequest;
 import com.vegetablechicken.plantrecognition.service.ThoughtService;
-import com.vegetablechicken.plantrecognition.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @Api("想法")
@@ -29,5 +27,11 @@ public class ThoughtController {
         return thoughtService.insertThought(thoughtRequest.getUserid(),thoughtRequest.getContent());
     }
 
+    @PostMapping("/getThoughts")
+    @ApiOperation(value = "想法", notes = "得到想法", tags = "Thought",httpMethod = "GET")
+    public List<Thought> getThoughts(@RequestParam String userid){
+
+        return thoughtService.getThought(userid);
+    }
 
 }

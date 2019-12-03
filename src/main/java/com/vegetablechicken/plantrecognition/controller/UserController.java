@@ -1,15 +1,19 @@
 package com.vegetablechicken.plantrecognition.controller;
 
+import com.vegetablechicken.plantrecognition.Method.Method;
+import com.vegetablechicken.plantrecognition.entity.User;
+import com.vegetablechicken.plantrecognition.request.UserInfoRequest;
 import com.vegetablechicken.plantrecognition.request.UserRequest;
 import com.vegetablechicken.plantrecognition.service.UserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Optional;
 
 @Slf4j
 @Api("用户操作")
@@ -31,6 +35,32 @@ public class UserController {
     @ApiOperation(value = "注册", notes = "用户注册", tags = "User",httpMethod = "POST")
     public String signup(@RequestBody UserRequest userRequest){
         return userService.signup(userRequest.getUserId(),userRequest.getPassword());
+    }
+
+    @GetMapping("/getInfo")
+    @ApiOperation(value = "信息", notes = "获得信息", tags = "User",httpMethod = "GET")
+    public Optional<User> getInfo(@RequestParam String userid){
+        return userService.getInfo(userid);
+    }
+
+    @PostMapping("/updatePassword")
+    @ApiOperation(value = "密码", notes = "修改密码", tags = "User",httpMethod = "POST")
+    public String updateInfo(@RequestBody UserRequest userRequest){
+        return userService.updatePassword(userRequest.getUserId(),userRequest.getPassword());
+    }
+
+    @PostMapping("/updateInfo")
+    @ApiOperation(value = "信息", notes = "修改信息", tags = "User",httpMethod = "POST")
+    public String updateInfo(@RequestBody UserInfoRequest userInfoRequest){
+        return userService.updatePassword(userInfoRequest.getUserid(),userInfoRequest.getName());
+    }
+
+
+
+    @PostMapping("/updateAvatar")
+    @ApiOperation(value = "头像", notes = "修改头像", tags = "User",httpMethod = "POST")
+    public String uploadAvatar(@RequestParam("userid")String userid,@RequestParam("file") MultipartFile file){
+        return userService.updateAvatar(userid,Method.uploadPic(file));
     }
 
 

@@ -25,7 +25,7 @@ public class CommentController {
     private CommentService commentService;
 
     @PostMapping("/insertComment")
-    @ApiOperation(value = "评论", notes = "发布评论", tags = "Comment",httpMethod = "POST")
+    @ApiOperation(value = "发布评论", notes = "发布评论", tags = "Comment",httpMethod = "POST")
     public String insertComment(@RequestBody CommentRequest commentRequest){
 
         return commentService.insertComment(commentRequest.getTid(),commentRequest.getUserid(),commentRequest.getContent());

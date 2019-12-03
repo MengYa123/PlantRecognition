@@ -20,21 +20,21 @@ public class LikeController {
     private LikeService likeService;
 
     @PostMapping("/insertLike")
-    @ApiOperation(value = "喜欢", notes = "添加喜欢", tags = "Like",httpMethod = "POST")
+    @ApiOperation(value = "添加喜欢", notes = "添加喜欢", tags = "Like",httpMethod = "POST")
     public String insertLike(@RequestBody LikeRequest likeRequest){
 
         return likeService.insertLike(likeRequest.getUserid(),likeRequest.getPid());
     }
 
     @PostMapping("/deleteLike")
-    @ApiOperation(value = "喜欢", notes = "删除喜欢", tags = "Like",httpMethod = "POST")
+    @ApiOperation(value = "删除喜欢", notes = "删除喜欢", tags = "Like",httpMethod = "POST")
     public void deleteLike(@RequestBody LikeRequest likeRequest){
 
         likeService.deleteLike(likeRequest.getUserid(),likeRequest.getPid());
     }
 
     @GetMapping("/getLikes")
-    @ApiOperation(value = "喜欢", notes = "获得喜欢", tags = "Like",httpMethod = "GET")
+    @ApiOperation(value = "获得喜欢", notes = "获得喜欢", tags = "Like",httpMethod = "GET")
     public List<Like> getLikes(@RequestParam String userid){
         return likeService.getLikes(userid);
     }

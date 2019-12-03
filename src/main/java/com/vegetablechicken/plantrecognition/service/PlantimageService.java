@@ -23,6 +23,6 @@ public class PlantimageService {
 
     public String Identify(String pic){
         //do sth
-        return "";
+        return "识别的接口还没有";
     }
 }

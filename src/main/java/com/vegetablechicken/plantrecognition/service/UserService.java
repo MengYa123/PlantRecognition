@@ -20,7 +20,7 @@ public class UserService  {
             return "login succeed";
         }
         else{
-            return "login failed";
+            return "Password error";
         }
 
     }

@@ -29,6 +29,7 @@ public class UserService  {
         Optional<User> user=userRepository.findById(username);
         if(user.isPresent()) return "Already registered";
         User newuser=User.builder().userid(username).password(password).name("未设置昵称").build();
+        System.out.println(newuser);
         userRepository.save(newuser);
         return "success";
     }
@@ -45,7 +46,7 @@ public class UserService  {
     public String updatePassword(String userid,String Password){
         Optional<User> user=userRepository.findById(userid);
         if(!user.isPresent()) return "failed";
-        user.get().setName(Password);
+        user.get().setPassword(Password);
         userRepository.save(user.get());
         return "update succeed";
 
@@ -54,7 +55,7 @@ public class UserService  {
     public String updateAvatar(String userid,String Avatar){
         Optional<User> user=userRepository.findById(userid);
         if(!user.isPresent()) return "failed";
-        user.get().setName(Avatar);
+        user.get().setAvatar(Avatar);
         userRepository.save(user.get());
         return "update succeed";
 

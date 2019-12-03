@@ -7,6 +7,9 @@ import com.vegetablechicken.plantrecognition.response.RecognitionResultResponse;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 @Service
 public class PlantimageService {
@@ -22,7 +25,23 @@ public class PlantimageService {
     }
 
     public String Identify(String pic){
-        //do sth
-        return "识别的接口还没有";
+        String pyFileAddress = "/plant";
+        String exe = "python";
+        String pyFileAddr = pyFileAddress+"/runable.py";
+        String arg1 = pic;
+        String[] commandLine = new String[] { exe, pyFileAddr, arg1,pyFileAddress };
+
+        try {
+            Process process = Runtime.getRuntime().exec(commandLine);
+            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String str = in.readLine();
+
+            in.close();
+            process.waitFor();
+            return str;
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

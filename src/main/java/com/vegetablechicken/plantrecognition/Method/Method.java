@@ -36,7 +36,7 @@ public class Method {
         try{
 
             file.transferTo(destination.getAbsoluteFile());
-            url="http://121.55.161.129:8080/images/"+fileName;
+            url="http://119.23.231.17:8080/images/"+fileName;
             return url;
 
         } catch (IOException e) {

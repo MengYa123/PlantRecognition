@@ -5,7 +5,9 @@ import com.vegetablechicken.plantrecognition.entity.Comment;
 import com.vegetablechicken.plantrecognition.entity.Like;
 import com.vegetablechicken.plantrecognition.repository.CommentRepository;
 import com.vegetablechicken.plantrecognition.repository.LikeRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -21,6 +23,8 @@ public class LikeService {
         return "success";
     }
 
+
+    @Transactional
     public void deleteLike(String userid,String pid){
         likeRepository.deleteByUseridAndPid(userid,pid);
 

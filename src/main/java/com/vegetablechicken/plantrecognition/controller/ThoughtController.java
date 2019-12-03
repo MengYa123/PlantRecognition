@@ -27,7 +27,7 @@ public class ThoughtController {
         return thoughtService.insertThought(thoughtRequest.getUserid(),thoughtRequest.getContent());
     }
 
-    @PostMapping("/getThoughts")
+    @GetMapping("/getThoughts")
     @ApiOperation(value = "得到想法", notes = "得到想法", tags = "Thought",httpMethod = "GET")
     public List<Thought> getThoughts(@RequestParam String userid){
 

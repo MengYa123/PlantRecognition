@@ -25,6 +25,7 @@ public class PlantimageService {
     }
 
     public String Identify(String pic){
+        pic = "fileUpload/" + pic.split("/")[pic.split("/").length - 1];
         String pyFileAddress = "/plant";
         String exe = "python";
         String pyFileAddr = pyFileAddress+"/runable.py";

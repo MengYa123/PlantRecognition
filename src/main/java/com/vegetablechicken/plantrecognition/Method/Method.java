@@ -23,7 +23,7 @@ public class Method {
         String url;
 
         String fileName=file.getOriginalFilename();
-        fileName=new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+"_"+fileName;
+        fileName=getRandomUUid()+"_"+fileName;
         String path="./fileUpload/"+fileName;
         File destination =new File(path);
         if(destination.exists()){

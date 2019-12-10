@@ -39,6 +39,7 @@ public class PlantimageService {
 
             in.close();
             process.waitFor();
+            System.out.println(str);
             return str;
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

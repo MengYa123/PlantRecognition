@@ -17,7 +17,7 @@ public class PlantimageService {
     private PlantimageRepository plantimageRepository;
 
     public RecognitionResultResponse insertPlantimage(String pic){
-        Plantimage plantimage= Plantimage.builder().piid(Method.getRandomUUid()).pic(pic).build();
+        Plantimage plantimage= Plantimage.builder().pic(pic).build();
         plantimage.setName(Identify(pic));
         plantimageRepository.save(plantimage);
         RecognitionResultResponse recognitionResultResponse=RecognitionResultResponse.builder().pic(pic).name(plantimage.getName()).build();

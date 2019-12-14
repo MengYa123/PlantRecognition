@@ -7,5 +7,5 @@ import java.io.Serializable;
 @Data
 public class LikePK implements Serializable {
     private String userid;
-    private String pid;
+    private long pid;
 }

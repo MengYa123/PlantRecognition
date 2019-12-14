@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ThoughtRequest {
     private String userid;
     private String content;
+    private String pic;
 
 
 }

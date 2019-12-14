@@ -25,7 +25,7 @@ public class PlantimageController {
     private PlantimageService plantimageService;
 
     @PostMapping("/PlantIdentification")
-    @ApiOperation(value = "植物图片", notes = "植物图片", tags = "Plantimage",httpMethod = "POST")
+    @ApiOperation(value = "植物识别", notes = "植物图片上传，此接口专门用于上传识别的植物图片", tags = "Plantimage",httpMethod = "POST")
     public RecognitionResultResponse PlantIdentification(@RequestParam("file") MultipartFile file){
         return plantimageService.insertPlantimage(Method.uploadPic(file));
     }

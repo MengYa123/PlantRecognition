@@ -21,8 +21,8 @@ public class Like {
     @Column(name = "user_id",length = 50)
     private String userid;
     @Id
-    @Column(name = "plant_id",length = 50)
-    private String pid;
+    @Column(name = "plant_id")
+    private long pid;
 
 
 }

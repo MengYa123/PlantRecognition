@@ -2,6 +2,7 @@ package com.vegetablechicken.plantrecognition.controller;
 
 import com.vegetablechicken.plantrecognition.entity.Like;
 import com.vegetablechicken.plantrecognition.request.LikeRequest;
+import com.vegetablechicken.plantrecognition.response.ReducePlantsResponse;
 import com.vegetablechicken.plantrecognition.service.LikeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,9 +35,9 @@ public class LikeController {
     }
 
     @GetMapping("/getLikes")
-    @ApiOperation(value = "获得喜欢", notes = "获得喜欢", tags = "Like",httpMethod = "GET")
-    public List<Like> getLikes(@RequestParam String userid){
-        return likeService.getLikes(userid);
+    @ApiOperation(value = "获得喜欢的植物列表", notes = "获得一个用户所有喜欢的植物的简略信息", tags = "Like",httpMethod = "GET")
+    public List<ReducePlantsResponse> getLikes(@RequestParam String userid){
+        return likeService.getLikePlants(userid);
     }
 
 

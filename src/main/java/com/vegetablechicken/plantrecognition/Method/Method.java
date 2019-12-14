@@ -1,12 +1,13 @@
 package com.vegetablechicken.plantrecognition.Method;
 
+import com.vegetablechicken.plantrecognition.entity.Plant;
+import com.vegetablechicken.plantrecognition.response.ReducePlantsResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 public class Method {
 
@@ -44,4 +45,19 @@ public class Method {
             return "上传错误";
         }
     }
+
+    public static List<ReducePlantsResponse> ReducePlant(List<Plant> plants){
+        List<ReducePlantsResponse> reducePlantsResponses=new ArrayList<ReducePlantsResponse>();
+        for (int i=0;i<plants.size();i++){
+            Plant temp=plants.get(i);
+            ReducePlantsResponse re=new ReducePlantsResponse(temp.getPid(),temp.getName(),temp.getPic(),temp.getKind());
+            reducePlantsResponses.add(re);
+            System.out.println(reducePlantsResponses.get(0));
+        }
+        //
+        return reducePlantsResponses;
+    }
+    /*public static List<Plant> searchPlant(String name){
+        //String START_URL = "https://mp.weixin.qq.com/s/zzkEWbcb81pbsr-PJvVzQA";
+    }*/
 }

@@ -15,11 +15,13 @@ import javax.persistence.*;
 @Table(name = "thought")
 public class Thought {
     @Id
-    @Column(name = "thought_id",length = 50)
-    private String tid;
+    @Column(name = "thought_id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long tid;
     @Column(name = "user_id",length = 50)
     private String userid;
     private String content;
+    private String pic;
     @Column(name = "likes_num")
     private int likes;
 

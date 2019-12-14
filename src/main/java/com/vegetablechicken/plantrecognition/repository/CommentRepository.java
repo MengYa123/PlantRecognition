@@ -8,5 +8,5 @@ package com.vegetablechicken.plantrecognition.repository;
         import java.util.List;
 
 public interface CommentRepository extends PagingAndSortingRepository<Comment,String> {
-    public List<Comment> findByTid(String tid);
+    public List<Comment> findByTidOrderByCid(long tid);
 }

@@ -18,6 +18,7 @@ public class Plant {
     @Column(name = "plant_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long pid;
+    @Column(name = "pic", length = 1000)
     private String pic;
     private String kind;
     private String name;

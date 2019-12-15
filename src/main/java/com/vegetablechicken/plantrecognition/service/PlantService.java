@@ -9,6 +9,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -63,6 +64,10 @@ public class PlantService {
                 if (element.children().get(0).text().equals("所在卷")){
                     continue;
                 }
+                if (element.children().get(0).text().trim().equals("查无结果")){
+                    break;
+                }
+                System.out.println(element);
                 String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
                 String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
                 plant = new Plant();
@@ -94,7 +99,11 @@ public class PlantService {
         String url = String.format("http://www.plant.csdb.cn/api.php?ntype=chname&name=%s",name);
         try {
             Document document = Jsoup.connect(url).get();
-            String detailUrl = document.getElementsByTag("item").get(0).getElementsByTag("source").text();
+            Elements elements = document.getElementsByTag("item");
+            if (elements.size() == 0){
+                return null;
+            }
+            String detailUrl = elements.get(0).getElementsByTag("source").text();
             return Jsoup.connect(detailUrl).get().getElementsByTag("img").get(0).attr("src");
         } catch (IOException e) {
             e.printStackTrace();

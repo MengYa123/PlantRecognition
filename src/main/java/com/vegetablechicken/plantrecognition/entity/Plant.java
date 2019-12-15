@@ -23,9 +23,6 @@ public class Plant {
     private String kind;
     private String name;
     @Lob
-    @Column(columnDefinition="text")
+    @Column(columnDefinition="TEXT")
     private String detail;
-
-
-
 }

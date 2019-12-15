@@ -1,5 +1,6 @@
 package com.vegetablechicken.plantrecognition.controller;
 
+import com.vegetablechicken.plantrecognition.Method.Method;
 import com.vegetablechicken.plantrecognition.entity.Plant;
 import com.vegetablechicken.plantrecognition.entity.Thought;
 import com.vegetablechicken.plantrecognition.response.ReducePlantsResponse;
@@ -27,7 +28,6 @@ public class PlantController {
     @GetMapping("/getPlant")
     @ApiOperation(value = "得到植物", notes = "通过pid得到一个植物详细信息", tags = "Plant",httpMethod = "GET")
     public Plant getPlant(@RequestParam String userid,@RequestParam long pid){
-
         return plantService.getPlant(userid,pid);
     }
 
@@ -36,5 +36,11 @@ public class PlantController {
     public List<ReducePlantsResponse> getPlants(@RequestParam String userid, @RequestParam String kind){
 
         return plantService.getSimplePlantByKind(userid,kind);
+    }
+
+    @GetMapping("/getPlantInfo")
+    @ApiOperation(value = "得到植物", notes = "通过植物名得到植物信息", tags = "Plant", httpMethod = "GET")
+    public List<Plant> getPlantInfo(@RequestParam String name){
+        return Method.searchPlant(name);
     }
 }

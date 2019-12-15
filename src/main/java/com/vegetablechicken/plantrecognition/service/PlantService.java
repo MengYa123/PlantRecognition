@@ -71,6 +71,7 @@ public class PlantService {
                 plant.setDetail(detail);
                 plant.setPic(plantImageUrl);
                 plantList.add(plant);
+                plantRepository.save(plant);
             }
         } catch (IOException e) {
             e.printStackTrace();

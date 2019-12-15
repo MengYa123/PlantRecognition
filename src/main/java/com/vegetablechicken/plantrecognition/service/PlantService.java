@@ -64,10 +64,12 @@ public class PlantService {
                     continue;
                 }
                 String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
+                String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
                 plant = new Plant();
                 plant.setKind(element.children().get(1).text());
                 plant.setName(element.children().get(3).text());
                 plant.setDetail(detail);
+                plant.setPic(plantImageUrl);
                 plantList.add(plant);
             }
         } catch (IOException e) {
@@ -85,6 +87,18 @@ public class PlantService {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public static String getPlantImageUrl(String name){
+        String url = String.format("http://www.plant.csdb.cn/api.php?ntype=chname&name=%s",name);
+        try {
+            Document document = Jsoup.connect(url).get();
+            String detailUrl = document.getElementsByTag("item").get(0).getElementsByTag("source").text();
+            return Jsoup.connect(detailUrl).get().getElementsByTag("img").get(0).attr("src");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

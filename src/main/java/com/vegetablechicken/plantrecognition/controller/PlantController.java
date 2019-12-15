@@ -40,7 +40,7 @@ public class PlantController {
 
     @GetMapping("/getPlantInfo")
     @ApiOperation(value = "得到植物", notes = "通过植物名得到植物信息", tags = "Plant", httpMethod = "GET")
-    public List<Plant> getPlantInfo(@RequestParam String name){
+    public List<ReducePlantsResponse> getPlantInfo(@RequestParam String name){
         return plantService.searchPlant(name);
     }
 }

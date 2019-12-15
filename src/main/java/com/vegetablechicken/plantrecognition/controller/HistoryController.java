@@ -24,7 +24,7 @@ public class HistoryController {
     private HistoryService historyService;
 
     @GetMapping("/getRecommend")
-    @ApiOperation(value = "获取推荐", notes = "根据查看植物的历史记录推荐植物,count为想要推荐的植物个数。接口还未完成", tags = "Recommend",httpMethod = "GET")
+    @ApiOperation(value = "获取推荐", notes = "根据查看植物的历史记录推荐植物,count为想要推荐的植物个数。接口完成一半，注意count不要大于已看过的植物数量", tags = "Recommend",httpMethod = "GET")
     public List<ReducePlantsResponse> getRecommend(@RequestParam String userid,@RequestParam int count){
 
         return historyService.recommendPlants(userid,count);

@@ -54,7 +54,7 @@ public class PlantService {
         return Method.ReducePlant(plants);
     }
 
-    public List<Plant> getPlantData(String name){
+    public List<ReducePlantsResponse> getPlantData(String name){
         String url = String.format("http://db.kib.ac.cn/CNFlora/SearchEngine.aspx?q=%s", URLEncoder.encode(name));
         List<Plant> plantList = new ArrayList<>();
         Plant plant;
@@ -68,20 +68,22 @@ public class PlantService {
                     break;
                 }
                 System.out.println(element);
-                String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
-                String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
-                plant = new Plant();
-                plant.setKind(element.children().get(1).text());
-                plant.setName(element.children().get(3).text());
-                plant.setDetail(detail);
-                plant.setPic(plantImageUrl);
+                String plantname =element.children().get(3).text();
+                List<Plant> isExist =plantRepository.findByName(plantname);
+                if(!isExist.isEmpty()) plant=isExist.get(0);//如果数据库已存在该植物则用数据库的数据
+                else {//数据库没有就去查询
+                    String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
+                    String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
+                    plant = Plant.builder().kind(element.children().get(1).text()).name(plantname).detail(detail).pic(plantImageUrl).build();
+
+                    plantRepository.save(plant);
+                }
                 plantList.add(plant);
-                plantRepository.save(plant);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return plantList;
+        return Method.ReducePlant(plantList);
     }
     public String getPlantDetail(String url){
         url = String.format("http://db.kib.ac.cn/CNFlora/%s",url);
@@ -111,7 +113,7 @@ public class PlantService {
         }
     }
 
-    public List<Plant> searchPlant(String name){
+    public List<ReducePlantsResponse> searchPlant(String name){
         return getPlantData(name);
     }
 

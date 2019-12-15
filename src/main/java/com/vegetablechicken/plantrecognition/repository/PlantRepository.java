@@ -10,4 +10,5 @@ import java.util.List;
 public interface PlantRepository extends PagingAndSortingRepository<Plant,String> {
     public Plant findByPid(long pid);
     public List<Plant> findByKind(String kind);
+    public List<Plant> findByName(String name);
 }

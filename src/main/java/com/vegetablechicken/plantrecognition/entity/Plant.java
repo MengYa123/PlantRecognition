@@ -22,6 +22,7 @@ public class Plant {
     private String pic;
     private String kind;
     private String name;
+    @Column(name = "pic", length = 2000)
     private String detail;
 
 

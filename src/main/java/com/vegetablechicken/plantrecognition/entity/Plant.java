@@ -22,7 +22,7 @@ public class Plant {
     private String pic;
     private String kind;
     private String name;
-    @Column(name = "detail", length = 5000)
+    @Column(columnDefinition = "TEXT")
     private String detail;
 
 

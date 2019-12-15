@@ -2,6 +2,8 @@ package com.vegetablechicken.plantrecognition.Method;
 
 import com.vegetablechicken.plantrecognition.entity.Plant;
 import com.vegetablechicken.plantrecognition.response.ReducePlantsResponse;
+import com.vegetablechicken.plantrecognition.service.PlantService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -11,10 +13,12 @@ import java.util.*;
 
 public class Method {
 
+    @Autowired
+    private static PlantService plantService;
+
     public static String getRandomUUid(){
         UUID uuid = UUID.randomUUID();
-        String str = uuid.toString();
-        return str;
+        return uuid.toString();
     }
 
     public static String uploadPic(MultipartFile file){
@@ -47,17 +51,16 @@ public class Method {
     }
 
     public static List<ReducePlantsResponse> ReducePlant(List<Plant> plants){
-        List<ReducePlantsResponse> reducePlantsResponses=new ArrayList<ReducePlantsResponse>();
-        for (int i=0;i<plants.size();i++){
-            Plant temp=plants.get(i);
-            ReducePlantsResponse re=new ReducePlantsResponse(temp.getPid(),temp.getName(),temp.getPic(),temp.getKind());
+        List<ReducePlantsResponse> reducePlantsResponses= new ArrayList<>();
+        for (Plant temp : plants) {
+            ReducePlantsResponse re = new ReducePlantsResponse(temp.getPid(), temp.getName(), temp.getPic(), temp.getKind());
             reducePlantsResponses.add(re);
             System.out.println(reducePlantsResponses.get(0));
         }
         //
         return reducePlantsResponses;
     }
-    /*public static List<Plant> searchPlant(String name){
-        //String START_URL = "https://mp.weixin.qq.com/s/zzkEWbcb81pbsr-PJvVzQA";
-    }*/
+    public static List<Plant> searchPlant(String name){
+        return plantService.getPlantData(name);
+    }
 }

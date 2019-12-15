@@ -102,4 +102,8 @@ public class PlantService {
         }
     }
 
+    public List<Plant> searchPlant(String name){
+        return getPlantData(name);
+    }
+
 }

@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Method {
@@ -59,8 +58,5 @@ public class Method {
         }
         //
         return reducePlantsResponses;
-    }
-    public static List<Plant> searchPlant(String name){
-        return plantService.getPlantData(name);
     }
 }

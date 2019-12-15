@@ -4,5 +4,5 @@ import java.io.Serializable;
 
 public class StarPK implements Serializable {
     private String userIdFirst;
-    private String usreIdSecond;
+    private String userIdSecond;
 }

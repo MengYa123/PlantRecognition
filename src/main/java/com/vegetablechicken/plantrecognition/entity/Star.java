@@ -16,9 +16,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @IdClass(StarPK.class)
 public class Star {
-
-
-
     @Id
     @Column(length = 50)
     private String userIdFirst;

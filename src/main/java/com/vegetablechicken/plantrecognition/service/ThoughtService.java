@@ -22,18 +22,18 @@ public class ThoughtService {
     private ThoughtRepository thoughtRepository;
 
 
-    public String insertThought(String userid, String content,String pic){
-        Thought thought=Thought.builder().userid(userid).content(content).pic(pic).build();
+    public String insertThought(String email, String content,String pic){
+        Thought thought=Thought.builder().email(email).content(content).pic(pic).build();
         thoughtRepository.save(thought);
         return "success";
     }
 
-    public List<Thought> getThought(String userid){
-        return thoughtRepository.findByUseridOrderByTid(userid);
+    public List<Thought> getThought(String email){
+        return thoughtRepository.findByEmailOrderByTid(email);
     }
     @Transactional
-    public String deleteThought(String userid,long tid){
-        if(thoughtRepository.findByTid(tid).getUserid().equals(userid)) {
+    public String deleteThought(String email,long tid){
+        if(thoughtRepository.findByTid(tid).getEmail().equals(email)) {
             thoughtRepository.deleteByTid(tid);
             return "delete succeed";
         }else{

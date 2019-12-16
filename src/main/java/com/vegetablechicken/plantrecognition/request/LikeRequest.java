@@ -7,6 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LikeRequest {
     private long pid;
-    private String userid;
+    private String email;
 
 }

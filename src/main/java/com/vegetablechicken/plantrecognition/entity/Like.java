@@ -19,7 +19,7 @@ public class Like {
 
     @Id
     @Column(name = "user_id",length = 50)
-    private String userid;
+    private String email;
     @Id
     @Column(name = "plant_id")
     private long pid;

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface StarRepository extends JpaRepository<Star, StarPK> {
-    List<Star> findAllByUserIdFirst(String userIdFirst);
-    List<Star> findAllByUserIdSecond(String userIdSecond);
-    Star findByUserIdFirstAndAndUserIdSecond(String userIdFirst, String userIdSecond);
+    List<Star> findAllByEmailFirst(String emailFirst);
+    List<Star> findAllByEmailSecond(String emailSecond);
+    Star findByEmailFirstAndAndEmailSecond(String emailFirst, String emailSecond);
 }

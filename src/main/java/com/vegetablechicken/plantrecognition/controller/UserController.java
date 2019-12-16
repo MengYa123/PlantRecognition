@@ -39,8 +39,8 @@ public class UserController {
 
     @GetMapping("/getInfo")
     @ApiOperation(value = "获得信息", notes = "获得信息", tags = "User",httpMethod = "GET")
-    public Optional<User> getInfo(@RequestParam String userid){
-        return userService.getInfo(userid);
+    public Optional<User> getInfo(@RequestParam String email){
+        return userService.getInfo(email);
     }
 
     @PostMapping("/updatePassword")
@@ -59,8 +59,8 @@ public class UserController {
 
     @PostMapping("/updateAvatar")
     @ApiOperation(value = "修改头像", notes = "修改头像\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
-    public String uploadAvatar(@RequestParam("userid")String userid,@RequestParam("file") MultipartFile file){
-        return userService.updateAvatar(userid,Method.uploadPic(file));
+    public String uploadAvatar(@RequestParam("email")String email,@RequestParam("file") MultipartFile file){
+        return userService.updateAvatar(email,Method.uploadPic(file));
     }
 
 

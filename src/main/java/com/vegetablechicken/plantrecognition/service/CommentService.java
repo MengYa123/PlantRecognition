@@ -14,8 +14,8 @@ public class CommentService {
     @Resource
     private CommentRepository commentRepository;
 
-    public String insertComment(long tid,String userid, String content){
-        Comment comment=Comment.builder().tid(tid).userid(userid).content(content).build();
+    public String insertComment(long tid,String email, String content){
+        Comment comment=Comment.builder().tid(tid).email(email).content(content).build();
         commentRepository.save(comment);
         return "success";
     }

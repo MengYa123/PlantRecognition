@@ -22,28 +22,28 @@ public class LikeService {
     @Resource
     private PlantRepository plantRepository;
 
-    public String insertLike(String userid,long pid){
-        Like like=Like.builder().pid(pid).userid(userid).build();
+    public String insertLike(String email,long pid){
+        Like like=Like.builder().pid(pid).email(email).build();
         likeRepository.save(like);
         return "success";
     }
 
 
     @Transactional
-    public void deleteLike(String userid,long pid){
-        likeRepository.deleteByUseridAndPid(userid,pid);
+    public void deleteLike(String email,long pid){
+        likeRepository.deleteByEmailAndPid(email,pid);
 
     }
 
-    public List<Like> getLikes(String userid){
-        return likeRepository.findByUserid(userid);
+    public List<Like> getLikes(String email){
+        return likeRepository.findByEmail(email);
     }
 
 
 
-    public List<ReducePlantsResponse> getLikePlants(String userid) {
+    public List<ReducePlantsResponse> getLikePlants(String email) {
         List<Plant> plants=new ArrayList<Plant>();
-        List<Like> likes=likeRepository.findByUserid(userid);
+        List<Like> likes=likeRepository.findByEmail(email);
         for (int i=0;i<likes.size();i++){
             Plant plant=plantRepository.findByPid(likes.get(i).getPid());
             plants.add(plant);

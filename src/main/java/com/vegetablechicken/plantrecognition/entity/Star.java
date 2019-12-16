@@ -18,9 +18,9 @@ import javax.persistence.*;
 public class Star {
     @Id
     @Column(length = 50)
-    private String userIdFirst;
+    private String emailFirst;
 
     @Id
     @Column(length = 50)
-    private String userIdSecond;
+    private String emailSecond;
 }

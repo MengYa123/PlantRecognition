@@ -24,20 +24,20 @@ public class LikeController {
     @ApiOperation(value = "添加喜欢", notes = "添加喜欢", tags = "Like",httpMethod = "POST")
     public String insertLike(@RequestBody LikeRequest likeRequest){
 
-        return likeService.insertLike(likeRequest.getUserid(),likeRequest.getPid());
+        return likeService.insertLike(likeRequest.getEmail(),likeRequest.getPid());
     }
 
     @PostMapping("/deleteLike")
     @ApiOperation(value = "删除喜欢", notes = "删除喜欢", tags = "Like",httpMethod = "POST")
     public void deleteLike(@RequestBody LikeRequest likeRequest){
 
-        likeService.deleteLike(likeRequest.getUserid(),likeRequest.getPid());
+        likeService.deleteLike(likeRequest.getEmail(),likeRequest.getPid());
     }
 
     @GetMapping("/getLikes")
     @ApiOperation(value = "获得喜欢的植物列表", notes = "获得一个用户所有喜欢的植物的简略信息", tags = "Like",httpMethod = "GET")
-    public List<ReducePlantsResponse> getLikes(@RequestParam String userid){
-        return likeService.getLikePlants(userid);
+    public List<ReducePlantsResponse> getLikes(@RequestParam String email){
+        return likeService.getLikePlants(email);
     }
 
 

@@ -20,41 +20,41 @@ public class StarService {
     @Autowired
     private UserRepository userRepository;
 
-    public String starSomeone(String firstUserId,String secondUserId){
-        if (starRepository.findByUserIdFirstAndAndUserIdSecond(firstUserId, secondUserId) != null){
+    public String starSomeone(String firstEmail,String secondEmail){
+        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) != null){
             return "star already!";
         }
-        Star star = new Star(firstUserId,secondUserId);
+        Star star = new Star(firstEmail,secondEmail);
         starRepository.save(star);
-        return "star " + secondUserId + " success!";
+        return "star " + secondEmail + " success!";
     }
 
-    public String unstarSomeone(String firstUserId,String secondUserId){
-        Star star = starRepository.findByUserIdFirstAndAndUserIdSecond(firstUserId, secondUserId);
-        if (starRepository.findByUserIdFirstAndAndUserIdSecond(firstUserId, secondUserId) == null){
+    public String unstarSomeone(String firstEmail,String secondEmail){
+        Star star = starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail);
+        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) == null){
             return "not stared yet!";
         }
         starRepository.delete(star);
-        return "unstar " + secondUserId + " success!";
+        return "unstar " + secondEmail + " success!";
     }
 
-    public List<User> getStarList(String userId){
-        List<Star> starList = starRepository.findAllByUserIdFirst(userId);
+    public List<User> getStarList(String email){
+        List<Star> starList = starRepository.findAllByEmailFirst(email);
         return getUsersInfoList(starList);
     }
 
-    public List<User> getFollowerList(String userId){
-        List<Star> starList = starRepository.findAllByUserIdSecond(userId);
+    public List<User> getFollowerList(String email){
+        List<Star> starList = starRepository.findAllByEmailSecond(email);
         return getUsersInfoList(starList);
     }
 
     public List<User> getUsersInfoList(List<Star> starList){
-        List<User> userIdList = new ArrayList<>();
+        List<User> emailList = new ArrayList<>();
         starList.forEach(star -> {
-            User user = userRepository.findByUserid(star.getUserIdSecond());
+            User user = userRepository.findByEmail(star.getEmailSecond());
             user.setPassword(null);
-            userIdList.add(user);
+            emailList.add(user);
         });
-        return userIdList;
+        return emailList;
     }
 }

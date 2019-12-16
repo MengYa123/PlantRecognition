@@ -24,27 +24,27 @@ public class StarController {
 
     @GetMapping("/getFollower")
     @ApiOperation(value = "获取粉丝列表", notes = "获取粉丝列表\n\r成功会返回所有的粉丝的除了密码之外的信息", tags = "Star", httpMethod = "GET")
-    public List<User> getFollower(@RequestParam("userid") String userId){
-        return starService.getFollowerList(userId);
+    public List<User> getFollower(@RequestParam("email") String email){
+        return starService.getFollowerList(email);
     }
 
     @GetMapping("/getStarList")
     @ApiOperation(value = "获取关注的用户列表", notes = "获取关注的用户列表\n\r成功会返回所有的用户的除了密码之外的信息", tags = "Star", httpMethod = "GET")
-    public List<User> getStaredUser(@RequestParam("userid") String userId){
-        return starService.getStarList(userId);
+    public List<User> getStaredUser(@RequestParam("email") String email){
+        return starService.getStarList(email);
     }
 
     @GetMapping("/star")
     @ApiOperation(value = "关注对应的用户", notes = "关注对应的用户\n\r返回对应的状态信息", tags = "Star", httpMethod = "GET")
-    public String star(@RequestParam("userid") String userId, @RequestParam("secondUserid") String secondUserId){
-        return starService.starSomeone(userId, secondUserId);
+    public String star(@RequestParam("email") String email, @RequestParam("secondEmail") String secondEmail){
+        return starService.starSomeone(email, secondEmail);
     }
 
 
     @GetMapping("/unstar")
     @ApiOperation(value = "取消关注对应的用户\", notes = \"关注对应的用户\\n\\r返回对应的状态信息", tags = "Star", httpMethod = "GET")
-    public String unstar(@RequestParam String userId, @RequestParam("secondUserid") String secondUserId){
-        return starService.unstarSomeone(userId, secondUserId);
+    public String unstar(@RequestParam String email, @RequestParam("secondEmail") String secondEmail){
+        return starService.unstarSomeone(email, secondEmail);
     }
 
 

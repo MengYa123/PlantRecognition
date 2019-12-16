@@ -19,7 +19,7 @@ public class Thought {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long tid;
     @Column(name = "user_id",length = 50)
-    private String userid;
+    private String email;
     private String content;
     private String pic;
     @Column(name = "likes_num")

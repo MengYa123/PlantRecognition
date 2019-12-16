@@ -9,7 +9,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface ThoughtRepository extends PagingAndSortingRepository<Thought,String> {
-    public List<Thought> findByUseridOrderByTid(String userid);
+    public List<Thought> findByEmailOrderByTid(String email);
     public Thought findByTid(long tid);
     public void deleteByTid(long tid);
 

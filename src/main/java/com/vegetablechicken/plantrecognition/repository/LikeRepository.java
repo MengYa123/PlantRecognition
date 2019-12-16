@@ -8,7 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface LikeRepository extends PagingAndSortingRepository<Like, LikePK> {
-    List<Like> findByUseridAndPid(String userid, long pid);
-    void deleteByUseridAndPid(String userid, long pid);
-    List<Like> findByUserid(String userid);
+    List<Like> findByEmailAndPid(String email, long pid);
+    void deleteByEmailAndPid(String email, long pid);
+    List<Like> findByEmail(String email);
 }

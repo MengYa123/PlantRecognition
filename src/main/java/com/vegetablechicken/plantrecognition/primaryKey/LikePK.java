@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @Data
 public class LikePK implements Serializable {
-    private String userid;
+    private String email;
     private long pid;
 }

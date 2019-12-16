@@ -30,19 +30,19 @@ public class HistoryService {
     private PlantService plantService;
 
 
-    public String insertHistory(String userid,long pid, String name,String kind,String pic){
-        History history=History.builder().userid(userid).pid(pid).name(name).pic(pic).build();
+    public String insertHistory(String email,long pid, String name,String kind,String pic){
+        History history=History.builder().email(email).pid(pid).name(name).pic(pic).build();
         historyRepository.save(history);
         return "success";
     }
 
-    public List<History> getHistories(String userid){
-        return historyRepository.findByUseridOrderByHidDesc(userid);
+    public List<History> getHistories(String email){
+        return historyRepository.findByEmailOrderByHidDesc(email);
     }
 
     @Transactional
-    public String deleteThought(String userid,long hid){
-        if(historyRepository.findByHid(hid).getUserid().equals(userid)) {
+    public String deleteThought(String email,long hid){
+        if(historyRepository.findByHid(hid).getEmail().equals(email)) {
             historyRepository.deleteByHid(hid);
             return "delete succeed";
         }else{
@@ -50,8 +50,8 @@ public class HistoryService {
         }
     }
 
-    public List<ReducePlantsResponse> recommendPlants(String userid,int count){
-        List<History> histories=historyRepository.findByUseridOrderByHidDesc(userid);
+    public List<ReducePlantsResponse> recommendPlants(String email,int count){
+        List<History> histories=historyRepository.findByEmailOrderByHidDesc(email);
         Map<String, Integer> map = new HashMap<String, Integer>();
         for(int i=0;i<histories.size();i++){
             String kind=histories.get(i).getKind();

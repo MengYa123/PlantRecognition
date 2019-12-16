@@ -21,7 +21,7 @@ public class Comment {
     @Column(name = "thought_id")
     private long tid;
     @Column(name = "user_id",length = 50)
-    private String userid;
+    private String email;
     private String content;
 
 

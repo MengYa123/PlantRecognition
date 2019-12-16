@@ -31,7 +31,7 @@ public class CommentController {
     @ApiOperation(value = "发布评论", notes = "发布评论", tags = "Comment",httpMethod = "POST")
     public String insertComment(@RequestBody CommentRequest commentRequest){
 
-        return commentService.insertComment(commentRequest.getTid(),commentRequest.getUserid(),commentRequest.getContent());
+        return commentService.insertComment(commentRequest.getTid(),commentRequest.getEmail(),commentRequest.getContent());
     }
 
     @GetMapping("/getComments")

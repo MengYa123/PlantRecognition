@@ -34,22 +34,22 @@ public class PlantService {
     @Autowired
     private HistoryService historyService;
 
-    public PlantSearchResponse searchPlant(String userid,String name){
+    public PlantSearchResponse searchPlant(String email,String name){
         //do sth
         return null;
     }
 
-    public Plant getPlant(String userid,long pid){
+    public Plant getPlant(String email,long pid){
         Plant plant=plantRepository.findByPid(pid);
-        historyService.insertHistory(userid,plant.getPid(),plant.getName(),plant.getKind(),plant.getPic());//添加到查询历史记录里面
+        historyService.insertHistory(email,plant.getPid(),plant.getName(),plant.getKind(),plant.getPic());//添加到查询历史记录里面
         return plant;
     }
 
-    public List<Plant> getPlantByKind(String userid,String kind){
+    public List<Plant> getPlantByKind(String email,String kind){
         return plantRepository.findByKind(kind);
     }
 
-    public List<ReducePlantsResponse> getSimplePlantByKind(String userid, String kind){
+    public List<ReducePlantsResponse> getSimplePlantByKind(String email, String kind){
         List<Plant> plants=plantRepository.findByKind(kind);
         return Method.ReducePlant(plants);
     }

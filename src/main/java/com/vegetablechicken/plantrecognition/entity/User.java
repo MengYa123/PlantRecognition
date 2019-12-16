@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class User {
     @Id
     @Column(name = "user_id",length = 50)
-    private String userid;
+    private String email;
     private String name;
     private String password;
     private String avatar;

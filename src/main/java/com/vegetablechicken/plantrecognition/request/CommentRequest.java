@@ -8,6 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CommentRequest {
     private long tid;
-    private String userid;
+    private String email;
     private String content;
 }

@@ -27,15 +27,15 @@ public class PlantController {
 
     @GetMapping("/getPlant")
     @ApiOperation(value = "得到植物", notes = "通过pid得到一个植物详细信息", tags = "Plant",httpMethod = "GET")
-    public Plant getPlant(@RequestParam String userid,@RequestParam long pid){
-        return plantService.getPlant(userid,pid);
+    public Plant getPlant(@RequestParam String email,@RequestParam long pid){
+        return plantService.getPlant(email,pid);
     }
 
     @GetMapping("/getPlants")
     @ApiOperation(value = "得到植物", notes = "通过类别得到多个植物简略信息", tags = "Plant",httpMethod = "GET")
-    public List<ReducePlantsResponse> getPlants(@RequestParam String userid, @RequestParam String kind){
+    public List<ReducePlantsResponse> getPlants(@RequestParam String email, @RequestParam String kind){
 
-        return plantService.getSimplePlantByKind(userid,kind);
+        return plantService.getSimplePlantByKind(email,kind);
     }
 
     @GetMapping("/getPlantInfo")

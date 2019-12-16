@@ -26,14 +26,14 @@ public class ThoughtController {
     @ApiOperation(value = "发布想法", notes = "发布新的想法", tags = "Thought",httpMethod = "POST")
     public String login(@RequestBody ThoughtRequest thoughtRequest){
 
-        return thoughtService.insertThought(thoughtRequest.getUserid(),thoughtRequest.getContent(),thoughtRequest.getPic());
+        return thoughtService.insertThought(thoughtRequest.getEmail(),thoughtRequest.getContent(),thoughtRequest.getPic());
     }
 
     @GetMapping("/getThoughts")
     @ApiOperation(value = "得到想法", notes = "得到一个用户的所有想法", tags = "Thought",httpMethod = "GET")
-    public List<Thought> getThoughts(@RequestParam String userid){
+    public List<Thought> getThoughts(@RequestParam String email){
 
-    return thoughtService.getThought(userid);
+    return thoughtService.getThought(email);
     }
 
     @GetMapping("/getSomeThoughts")
@@ -45,9 +45,9 @@ public class ThoughtController {
 
     @GetMapping("/deleteThought")
     @ApiOperation(value = "删除想法", notes = "根据tid删除想法", tags = "Thought",httpMethod = "GET")
-    public String deleteThought(@RequestParam String userid,@RequestParam long tid){
+    public String deleteThought(@RequestParam String email,@RequestParam long tid){
 
-        return thoughtService.deleteThought(userid,tid);
+        return thoughtService.deleteThought(email,tid);
     }
 
 }

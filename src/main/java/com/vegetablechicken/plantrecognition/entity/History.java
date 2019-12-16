@@ -19,7 +19,7 @@ public class History {
     @Column(name = "history_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long hid;
-    private String userid;
+    private String email;
     private long pid;
     private String name;
     private String kind;

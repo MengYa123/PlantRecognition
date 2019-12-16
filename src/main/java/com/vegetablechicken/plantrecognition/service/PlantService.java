@@ -81,7 +81,9 @@ public class PlantService {
                 else {//数据库没有就去查询
                     String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
                     String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
-                    plant = Plant.builder().kind(element.children().get(1).text()).name(plantname).detail(detail).pic(plantImageUrl).build();
+                    String plantkind=element.children().get(1).text();
+                    if(plantkind.equals("")) plantkind=plantname;
+                    plant = Plant.builder().kind(plantkind).name(plantname).detail(detail).pic(plantImageUrl).build();
 
                     plantRepository.save(plant);
                 }

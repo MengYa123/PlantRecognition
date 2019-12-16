@@ -2,8 +2,9 @@ package com.vegetablechicken.plantrecognition.controller;
 
 import com.vegetablechicken.plantrecognition.Method.Method;
 import com.vegetablechicken.plantrecognition.entity.User;
-import com.vegetablechicken.plantrecognition.request.UserInfoRequest;
+import com.vegetablechicken.plantrecognition.request.UserNameRequest;
 import com.vegetablechicken.plantrecognition.request.UserRequest;
+import com.vegetablechicken.plantrecognition.request.UserSignatureRequset;
 import com.vegetablechicken.plantrecognition.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -45,14 +46,20 @@ public class UserController {
 
     @PostMapping("/updatePassword")
     @ApiOperation(value = "修改密码", notes = "修改密码\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
-    public String updateInfo(@RequestBody UserRequest userRequest){
+    public String updatePassword(@RequestBody UserRequest userRequest){
         return userService.updatePassword(userRequest.getEmail(),userRequest.getPassword());
     }
 
-    @PostMapping("/updateInfo")
-    @ApiOperation(value = "修改信息", notes = "修改信息\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
-    public String updateInfo(@RequestBody UserInfoRequest userInfoRequest){
-        return userService.updateInfo(userInfoRequest.getEmail(),userInfoRequest.getName());
+    @PostMapping("/updateName")
+    @ApiOperation(value = "修改昵称", notes = "修改昵称\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
+    public String updateName(@RequestBody UserNameRequest userNameRequest){
+        return userService.updateName(userNameRequest.getEmail(),userNameRequest.getName());
+    }
+
+    @PostMapping("/updateSignature")
+    @ApiOperation(value = "修改签名", notes = "修改签名\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
+    public String updateSignature(@RequestBody UserSignatureRequset userSignatureRequset){
+        return userService.updateSignature(userSignatureRequset.getEmail(),userSignatureRequset.getSignature());
     }
 
 
@@ -61,6 +68,12 @@ public class UserController {
     @ApiOperation(value = "修改头像", notes = "修改头像\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
     public String uploadAvatar(@RequestParam("email")String email,@RequestParam("file") MultipartFile file){
         return userService.updateAvatar(email,Method.uploadPic(file));
+    }
+
+    @PostMapping("/updateBackground")
+    @ApiOperation(value = "修改背景图", notes = "修改背景图\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
+    public String updateBackground(@RequestParam("email")String email,@RequestParam("file") MultipartFile file){
+        return userService.updateBackground(email,Method.uploadPic(file));
     }
 
 

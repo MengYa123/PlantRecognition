@@ -5,8 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Data
 @Slf4j
-public class UserInfoRequest {
+public class UserSignatureRequset {
     private String email;
-    private String name;
-
+    private String signature;
 }

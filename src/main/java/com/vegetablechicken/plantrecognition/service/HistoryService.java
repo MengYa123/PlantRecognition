@@ -39,6 +39,8 @@ public class HistoryService {
     @Autowired
     private PlantService plantService;
 
+    Random ra =new Random();
+
 
     public String insertHistory(String email,long pid, String name,String kind,String pic){
         History history=History.builder().email(email).pid(pid).name(name).kind(kind).pic(pic).build();
@@ -92,7 +94,7 @@ public class HistoryService {
 
         List<ReducePlantsResponse> res=new ArrayList<ReducePlantsResponse>();
         Iterator<Map.Entry<String, Integer>> temp = sortedMap.entrySet().iterator();
-        Random ra =new Random();
+
         String recommendString="";
         for (int i=0;i<sortedMap.size();i++) {
             String recommendRoot =temp.next().getKey();
@@ -103,7 +105,7 @@ public class HistoryService {
 
             //System.out.println(index);
 
-            recommendString+=recommendList.get(ra.nextInt(recommendList.size()-1)+1).getName();
+            recommendString+=recommendList.get(ra.nextInt(recommendList.size()-1)+1).getKind();
             recommendString+=",";
         }
         System.out.println(recommendString);
@@ -112,17 +114,25 @@ public class HistoryService {
     }
 
     public List<ReducePlantsResponse> recommendPlants(String email,int count){
-        Recommend recommend=recommendRepository.findByEmail(email);
+        Optional<Recommend> r=recommendRepository.findById(email);
+        System.out.println(r.isPresent());
+        if(!r.isPresent()) {
+            Pageable pr = PageRequest.of(ra.nextInt(30),count, Sort.Direction.DESC,"pid");
+            Page<Plant> page= plantRepository.findAll(pr);
+            List<Plant> Plants=page.getContent();
+            return Method.ReducePlant(Plants);
+        }
+        Recommend recommend=r.get();
         String recommendlist=recommend.getRecommendlist();
-        String[] names = recommendlist.split(",");
+        String[] kinds = recommendlist.split(",");
         List<Plant> recommendPlants=new ArrayList<Plant>();
-        for (int i=0;i<names.length&&i<count;i++){
-            recommendPlants.add(plantRepository.findByName(names[i]).get(0));
+        for (int i=0;i<kinds.length&&i<count;i++){
+            List<Plant> rep=plantRepository.findByKind(kinds[i]);
+            recommendPlants.add(rep.get(ra.nextInt(rep.size()-1)+1));
         }
 
         return Method.ReducePlant(recommendPlants);
 
     }
-
 
 }

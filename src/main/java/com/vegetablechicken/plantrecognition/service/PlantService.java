@@ -42,6 +42,13 @@ public class PlantService {
     public Plant getPlant(String email,long pid){
         Plant plant=plantRepository.findByPid(pid);
         historyService.insertHistory(email,plant.getPid(),plant.getName(),plant.getKind(),plant.getPic());//添加到查询历史记录里面
+        new Thread(){
+            @Override
+            public void run() {
+                historyService.updateRecommend(email);
+            }
+        }.start();
+
         return plant;
     }
 

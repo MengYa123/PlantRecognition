@@ -98,7 +98,11 @@ public class PlantService {
         Plant plant;
         try {
             Document document = Jsoup.connect(url).get();
+            int index = 0;
             for (Element element : document.getElementsByTag("tbody").get(0).children()) {
+                if (index > 5)
+                    break;
+                index ++;
                 if (element.children().get(0).text().equals("所在卷")) {
                     continue;
                 }

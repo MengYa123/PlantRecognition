@@ -148,6 +148,9 @@ public class HistoryService {
                 orderClassList.put(history.getKind(), 1);
             }
         });
+        if (orderClassList.isEmpty()){
+            return getRandomClass(count);
+        }
         List<Map.Entry<String, Integer>> orderedList = orderMap(orderClassList);
         if (orderedList.size() < count){
             count = orderedList.size();
@@ -180,5 +183,14 @@ public class HistoryService {
         }
         stream.limit(count).forEach(history -> result.add(new ReducePlantsResponse(history.getPid(), history.getName(), history.getPic(), history.getKind())));
         return result;
+    }
+
+    public List<String> getRandomClass(int count){
+        List<String> list = plantRepository.findAllKind();
+        if (count > list.size()){
+            count = list.size();
+        }
+        Collections.shuffle(list);
+        return list.subList(0, count);
     }
 }

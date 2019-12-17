@@ -139,7 +139,7 @@ public class HistoryService {
     }
 
 
-    public List<String> recommendPlantsClass(String email, int count) {
+    public List<ReducePlantsResponse> recommendPlantsClass(String email, int count) {
         List<History> historyList = historyRepository.findByEmailOrderByHidDesc(email);
         HashMap<String, Integer> orderClassList = new HashMap<>();
         historyList.forEach(history -> {
@@ -150,7 +150,7 @@ public class HistoryService {
             }
         });
         if (orderClassList.isEmpty()){
-            return getRandomClass(count);
+            return getAllClassPlant(email,getRandomClass(count));
         }
         List<Map.Entry<String, Integer>> orderedList = orderMap(orderClassList);
         if (orderedList.size() < count){
@@ -159,7 +159,15 @@ public class HistoryService {
         List<String> recommendClass = new ArrayList<>();
         orderedList.stream().forEach(stringIntegerEntry -> System.out.println(stringIntegerEntry.getKey()));
         orderedList.stream().limit(count).forEach(entry -> recommendClass.add(entry.getKey()));
-        return recommendClass;
+        return getAllClassPlant(email,recommendClass);
+    }
+
+    public List<ReducePlantsResponse> getAllClassPlant(String email,List<String> strings){
+        List<Plant> plantList = new ArrayList<>();
+        for (String str: strings){
+            getRecommendClassPlant(email, str, 1).get(0);
+        }
+        return Method.ReducePlant(plantList);
     }
 
     public List<Map.Entry<String, Integer>> orderMap(HashMap<String, Integer> initialMap) {

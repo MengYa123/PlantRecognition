@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 @Service
@@ -169,10 +170,14 @@ public class HistoryService {
         Random random = new Random();
         List<History> historyList = historyRepository.findByEmailAndKind(email, kind);
         List<ReducePlantsResponse> result = new ArrayList<>();
-        if (result.size() < count){
-            count = result.size();
+        if (historyList.size() < count){
+            count = historyList.size();
         }
-        historyList.stream().skip(random.nextInt(historyList.size() - count)).limit(count).forEach(history -> result.add(new ReducePlantsResponse(history.getPid(), history.getName(), history.getPic(), history.getKind())));
+        Stream<History> stream = historyList.stream();
+        if (count > 0){
+            stream = stream.skip(random.nextInt(historyList.size() - count));
+        }
+        stream.limit(count).forEach(history -> result.add(new ReducePlantsResponse(history.getPid(), history.getName(), history.getPic(), history.getKind())));
         return result;
     }
 }

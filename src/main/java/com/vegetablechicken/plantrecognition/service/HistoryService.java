@@ -175,6 +175,11 @@ public class HistoryService {
         Random random = new Random();
         List<History> historyList = historyRepository.findByEmailAndKind(email, kind);
         List<ReducePlantsResponse> result = new ArrayList<>();
+        if (historyList.isEmpty()){
+            List<Plant> plantList = plantRepository.findByKind(kind);
+            Collections.shuffle(plantList);
+            return Method.ReducePlant(plantList.subList(0, count));
+        }
         if (historyList.size() < count){
             count = historyList.size();
         }
@@ -198,9 +203,7 @@ public class HistoryService {
     public List<String> findAllKind(){
         List<Plant> plantList = plantRepository.findAll();
         Map<String, Integer> map = new HashMap<>();
-        plantList.forEach(plant -> {
-            map.put(plant.getKind(),0);
-        });
+        plantList.forEach(plant -> map.put(plant.getKind(),0));
         return new ArrayList<>(map.keySet());
     }
 }

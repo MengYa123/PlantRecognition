@@ -32,7 +32,7 @@ public class HistoryController {
 
     @GetMapping("/getRecommendClass")
     @ApiOperation(value = "获取对应的推荐类别", notes ="根据查看的历史记录推荐对应的类别", tags = "Recommend", httpMethod = "GET")
-    public List<String> getRecommendClass(@RequestParam("email") String email, @RequestParam("count") int count){
+    public List<ReducePlantsResponse> getRecommendClass(@RequestParam("email") String email, @RequestParam("count") int count){
         return historyService.recommendPlantsClass(email,count);
     }
 

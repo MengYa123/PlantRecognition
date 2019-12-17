@@ -157,7 +157,6 @@ public class HistoryService {
             count = orderedList.size();
         }
         List<String> recommendClass = new ArrayList<>();
-        orderedList.stream().forEach(stringIntegerEntry -> System.out.println(stringIntegerEntry.getKey()));
         orderedList.stream().limit(count).forEach(entry -> recommendClass.add(entry.getKey()));
         return getAllClassPlant(email,recommendClass);
     }

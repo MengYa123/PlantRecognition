@@ -40,18 +40,23 @@ public class StarService {
 
     public List<User> getStarList(String email) {
         List<Star> starList = starRepository.findAllByEmailFirst(email);
-        return getUsersInfoList(starList);
+        return getUsersInfoList(starList, "starer");
     }
 
     public List<User> getFollowerList(String email) {
         List<Star> starList = starRepository.findAllByEmailSecond(email);
-        return getUsersInfoList(starList);
+        return getUsersInfoList(starList, "follower");
     }
 
-    public List<User> getUsersInfoList(List<Star> starList) {
+    public List<User> getUsersInfoList(List<Star> starList, String type) {
         List<User> emailList = new ArrayList<>();
         starList.forEach(star -> {
-            User user = userRepository.findByEmail(star.getEmailSecond());
+            User user = null;
+            if(type.equals("follower")){
+                user = userRepository.findByEmail(star.getEmailFirst());
+            }else {
+                user = userRepository.findByEmail(star.getEmailSecond());
+            }
             user.setPassword(null);
             emailList.add(user);
         });

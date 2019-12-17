@@ -142,10 +142,10 @@ public class HistoryService {
         List<History> historyList = historyRepository.findByEmailOrderByHidDesc(email);
         HashMap<String, Integer> orderClassList = new HashMap<>();
         historyList.forEach(history -> {
-            if (!orderClassList.containsKey(history.getKind())) {
+            if (orderClassList.containsKey(history.getKind())) {
                 orderClassList.put(history.getKind(), orderClassList.get(history.getKind()) + 1);
             } else {
-                orderClassList.put(history.getKind(), 0);
+                orderClassList.put(history.getKind(), 1);
             }
         });
         List<Map.Entry<String, Integer>> orderedList = orderMap(orderClassList);
@@ -153,7 +153,8 @@ public class HistoryService {
             count = orderedList.size();
         }
         List<String> recommendClass = new ArrayList<>();
-        orderedList.stream().skip(0).limit(count).forEach(entry -> recommendClass.add(entry.getKey()));
+        orderedList.stream().forEach(stringIntegerEntry -> System.out.println(stringIntegerEntry.getKey()));
+        orderedList.stream().limit(count).forEach(entry -> recommendClass.add(entry.getKey()));
         return recommendClass;
     }
 
@@ -161,7 +162,7 @@ public class HistoryService {
         if (initialMap == null || initialMap.isEmpty()) {
             return new ArrayList<>();
         }
-        List<Map.Entry<String, Integer>> entryList = new ArrayList<>();
+        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(initialMap.entrySet());
         Collections.sort(entryList, Comparator.comparingInt(Map.Entry::getValue));
         return entryList;
     }

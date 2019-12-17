@@ -77,7 +77,6 @@ public class UserService  {
         user.get().setBackground(background);
         userRepository.save(user.get());
         return "update succeed";
-
     }
 
     public Optional<User> getInfo(String email){

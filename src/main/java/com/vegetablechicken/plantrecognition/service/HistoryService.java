@@ -148,6 +148,9 @@ public class HistoryService {
             }
         });
         List<Map.Entry<String, Integer>> orderedList = orderMap(orderClassList);
+        if (orderedList.size() < count){
+            count = orderedList.size();
+        }
         List<String> recommendClass = new ArrayList<>();
         orderedList.stream().skip(0).limit(count).forEach(entry -> recommendClass.add(entry.getKey()));
         return recommendClass;
@@ -155,9 +158,8 @@ public class HistoryService {
 
     public List<Map.Entry<String, Integer>> orderMap(HashMap<String, Integer> initialMap) {
         if (initialMap == null || initialMap.isEmpty()) {
-            return null;
+            return new ArrayList<>();
         }
-        LinkedHashMap<String, Integer> result = new LinkedHashMap<>();
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>();
         Collections.sort(entryList, Comparator.comparingInt(Map.Entry::getValue));
         return entryList;
@@ -167,6 +169,9 @@ public class HistoryService {
         Random random = new Random();
         List<History> historyList = historyRepository.findByEmailAndKind(email, kind);
         List<ReducePlantsResponse> result = new ArrayList<>();
+        if (result.size() < count){
+            count = result.size();
+        }
         historyList.stream().skip(random.nextInt(historyList.size() - count)).limit(count).forEach(history -> result.add(new ReducePlantsResponse(history.getPid(), history.getName(), history.getPic(), history.getKind())));
         return result;
     }

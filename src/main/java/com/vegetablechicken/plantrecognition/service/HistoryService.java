@@ -162,11 +162,11 @@ public class HistoryService {
     }
 
     public List<ReducePlantsResponse> getAllClassPlant(String email,List<String> strings){
-        List<Plant> plantList = new ArrayList<>();
+        List<ReducePlantsResponse> plantList = new ArrayList<>();
         for (String str: strings){
-            getRecommendClassPlant(email, str, 1).get(0);
+            plantList.add(getRecommendClassPlant(email, str, 1).get(0));
         }
-        return Method.ReducePlant(plantList);
+        return plantList;
     }
 
     public List<Map.Entry<String, Integer>> orderMap(HashMap<String, Integer> initialMap) {

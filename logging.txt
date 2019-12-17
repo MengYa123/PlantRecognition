@@ -7519,3 +7519,311 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2019-12-17 18:31:02.764  INFO 19504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-12-17 18:31:02.766  INFO 19504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-12-17 18:31:02.778  INFO 19504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-12-17 19:40:59.866  INFO 3324 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Starting PlantRecognitionApplication on LAPTOP-8PRMG17M with PID 3324 (E:\Code\Java\plant-recognition\target\classes started by mengz in E:\Code\Java\plant-recognition)
+2019-12-17 19:40:59.871  INFO 3324 --- [restartedMain] c.v.p.PlantRecognitionApplication        : No active profile set, falling back to default profiles: default
+2019-12-17 19:40:59.966  INFO 3324 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in E:\Code\Utils\apache-maven-3.6.1\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-12-17 19:40:59.966  INFO 3324 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-17 19:40:59.966  INFO 3324 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-17 19:41:01.621  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:41:01.622  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:41:01.682  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.CommentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.684  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.HistoryRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.686  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.LikeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.688  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.690  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantimageRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.692  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.RecommendRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.694  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.StarRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.696  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.ThoughtRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.699  INFO 3324 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.UserRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:01.700  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 0 repository interfaces.
+2019-12-17 19:41:01.711  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:41:01.712  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:41:01.778  INFO 3324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 9 repository interfaces.
+2019-12-17 19:41:02.135  INFO 3324 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 19:41:02.445  INFO 3324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-17 19:41:02.455  INFO 3324 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-17 19:41:02.456  INFO 3324 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 19:41:02.558  INFO 3324 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-17 19:41:02.558  INFO 3324 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2592 ms
+2019-12-17 19:41:02.750  INFO 3324 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-17 19:41:02.807  INFO 3324 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-17 19:41:02.915  INFO 3324 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-17 19:41:03.023  INFO 3324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-17 19:41:05.092  INFO 3324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-17 19:41:05.122  INFO 3324 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-17 19:41:05.357  WARN 3324 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:41:05.358  WARN 3324 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:41:06.973  INFO 3324 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-17 19:41:06.990  INFO 3324 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-17 19:41:07.079  INFO 3324 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-17 19:41:07.817  WARN 3324 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-17 19:41:08.073  INFO 3324 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 19:41:08.294  INFO 3324 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-17 19:41:08.309  INFO 3324 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-17 19:41:08.320  INFO 3324 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-17 19:41:08.504  INFO 3324 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: PlantIdentificationUsingPOST_1
+2019-12-17 19:41:08.550  INFO 3324 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loginUsingPOST_1
+2019-12-17 19:41:08.617  INFO 3324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 19:41:08.620  INFO 3324 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Started PlantRecognitionApplication in 9.159 seconds (JVM running for 11.064)
+2019-12-17 19:41:10.728  INFO 3324 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-17 19:41:10.732  INFO 3324 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-17 19:41:10.741  INFO 3324 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-17 19:41:24.571  INFO 9616 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Starting PlantRecognitionApplication on LAPTOP-8PRMG17M with PID 9616 (E:\Code\Java\plant-recognition\target\classes started by mengz in E:\Code\Java\plant-recognition)
+2019-12-17 19:41:24.576  INFO 9616 --- [restartedMain] c.v.p.PlantRecognitionApplication        : No active profile set, falling back to default profiles: default
+2019-12-17 19:41:24.648  INFO 9616 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in E:\Code\Utils\apache-maven-3.6.1\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-12-17 19:41:24.657  INFO 9616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-17 19:41:24.659  INFO 9616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-17 19:41:25.737  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:41:25.744  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:41:25.788  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.CommentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.790  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.HistoryRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.793  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.LikeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.795  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.796  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantimageRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.797  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.RecommendRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.800  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.StarRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.802  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.ThoughtRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.805  INFO 9616 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.UserRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:41:25.806  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57ms. Found 0 repository interfaces.
+2019-12-17 19:41:25.818  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:41:25.818  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:41:25.874  INFO 9616 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 9 repository interfaces.
+2019-12-17 19:41:26.271  INFO 9616 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 19:41:26.591  INFO 9616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-17 19:41:26.600  INFO 9616 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-17 19:41:26.601  INFO 9616 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 19:41:26.700  INFO 9616 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-17 19:41:26.701  INFO 9616 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2042 ms
+2019-12-17 19:41:26.872  INFO 9616 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-17 19:41:27.017  INFO 9616 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-17 19:41:27.141  INFO 9616 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-17 19:41:27.249  INFO 9616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-17 19:41:28.819  INFO 9616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-17 19:41:28.849  INFO 9616 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-17 19:41:29.073  WARN 9616 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:41:29.073  WARN 9616 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:41:30.589  INFO 9616 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-17 19:41:30.596  INFO 9616 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-17 19:41:30.633  INFO 9616 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-17 19:41:31.224  WARN 9616 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-17 19:41:31.443  INFO 9616 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 19:41:31.664  INFO 9616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-17 19:41:31.679  INFO 9616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-17 19:41:31.692  INFO 9616 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-17 19:41:31.888  INFO 9616 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: PlantIdentificationUsingPOST_1
+2019-12-17 19:41:31.935  INFO 9616 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loginUsingPOST_1
+2019-12-17 19:41:32.006  INFO 9616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 19:41:32.009  INFO 9616 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Started PlantRecognitionApplication in 7.837 seconds (JVM running for 9.608)
+2019-12-17 19:41:38.500  INFO 9616 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 19:41:38.502  INFO 9616 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-17 19:41:38.509  INFO 9616 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-12-17 19:42:48.540  WARN 9616 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s455ms743µs300ns).
+2019-12-17 19:42:48.580  INFO 9616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-17 19:42:48.590  INFO 9616 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-17 19:42:48.594  INFO 9616 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-17 19:42:48.614  INFO 9616 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-17 19:42:48.810  WARN 9616 --- [http-nio-8080-exec-3] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@3d73deee marked as broken because of SQLSTATE(08S01), ErrorCode(0)
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 20,209 milliseconds ago. The last packet sent successfully to the server was 20,310 milliseconds ago.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2292) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2050) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:953) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2815) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2797) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2629) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.Loader.list(Loader.java:2624) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:506) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:396) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1396) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1558) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1526) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.query.Query.getResultList(Query.java:165) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getResultList(CriteriaQueryTypeQueryAdapter.java:76) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:126) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:154) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:142) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:618) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:605) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:149) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy116.findByEmailAndKind(Unknown Source) ~[na:na]
+	at com.vegetablechicken.plantrecognition.service.HistoryService.getRecommendClassPlant(HistoryService.java:183) ~[classes/:na]
+	at com.vegetablechicken.plantrecognition.service.HistoryService.getAllClassPlant(HistoryService.java:167) ~[classes/:na]
+	at com.vegetablechicken.plantrecognition.service.HistoryService.recommendPlantsClass(HistoryService.java:161) ~[classes/:na]
+	at com.vegetablechicken.plantrecognition.service.HistoryService$$FastClassBySpringCGLIB$$d4282a0f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.vegetablechicken.plantrecognition.service.HistoryService$$EnhancerBySpringCGLIB$$e0216809.recommendPlantsClass(<generated>) ~[classes/:na]
+	at com.vegetablechicken.plantrecognition.controller.HistoryController.getRecommendClass(HistoryController.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 20,209 milliseconds ago. The last packet sent successfully to the server was 20,310 milliseconds ago.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:539) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:703) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:642) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1075) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:930) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	... 97 common frames omitted
+Caused by: javax.net.ssl.SSLException: Socket closed
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:127) ~[na:na]
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:320) ~[na:na]
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:263) ~[na:na]
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:258) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1342) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:844) ~[na:na]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:133) ~[na:na]
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:533) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	... 102 common frames omitted
+Caused by: java.net.SocketException: Socket closed
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method) ~[na:na]
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115) ~[na:na]
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168) ~[na:na]
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:448) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:68) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1132) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:828) ~[na:na]
+	... 111 common frames omitted
+
+2019-12-17 19:42:48.845  WARN 9616 --- [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2019-12-17 19:42:48.933 ERROR 9616 --- [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+
+The last packet successfully received from the server was 20,209 milliseconds ago. The last packet sent successfully to the server was 20,310 milliseconds ago.
+2019-12-17 19:43:55.524  INFO 3256 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Starting PlantRecognitionApplication on LAPTOP-8PRMG17M with PID 3256 (E:\Code\Java\plant-recognition\target\classes started by mengz in E:\Code\Java\plant-recognition)
+2019-12-17 19:43:55.529  INFO 3256 --- [restartedMain] c.v.p.PlantRecognitionApplication        : No active profile set, falling back to default profiles: default
+2019-12-17 19:43:55.580  INFO 3256 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in E:\Code\Utils\apache-maven-3.6.1\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/E:/Code/Utils/apache-maven-3.6.1/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-12-17 19:43:55.581  INFO 3256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-17 19:43:55.581  INFO 3256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-17 19:43:56.648  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:43:56.649  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:43:56.701  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.CommentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.703  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.HistoryRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.705  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.LikeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.706  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.708  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.PlantimageRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.709  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.RecommendRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.711  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.StarRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.712  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.ThoughtRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.714  INFO 3256 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.vegetablechicken.plantrecognition.repository.UserRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2019-12-17 19:43:56.715  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 0 repository interfaces.
+2019-12-17 19:43:56.723  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-17 19:43:56.724  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-17 19:43:56.765  INFO 3256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 9 repository interfaces.
+2019-12-17 19:43:57.011  INFO 3256 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-17 19:43:57.256  INFO 3256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-17 19:43:57.263  INFO 3256 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-17 19:43:57.263  INFO 3256 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-17 19:43:57.349  INFO 3256 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-17 19:43:57.349  INFO 3256 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1768 ms
+2019-12-17 19:43:57.473  INFO 3256 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-17 19:43:57.516  INFO 3256 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-17 19:43:57.598  INFO 3256 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-17 19:43:57.662  INFO 3256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-17 19:43:59.272  INFO 3256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-17 19:43:59.301  INFO 3256 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-17 19:43:59.481  WARN 3256 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:43:59.481  WARN 3256 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.vegetablechicken.plantrecognition.primaryKey.StarPK
+2019-12-17 19:44:01.250  INFO 3256 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-17 19:44:01.265  INFO 3256 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-17 19:44:01.365  INFO 3256 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-17 19:44:02.139  WARN 3256 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-17 19:44:02.317  INFO 3256 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-17 19:44:02.505  INFO 3256 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-17 19:44:02.517  INFO 3256 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-17 19:44:02.527  INFO 3256 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-17 19:44:02.689  INFO 3256 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: PlantIdentificationUsingPOST_1
+2019-12-17 19:44:02.739  INFO 3256 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loginUsingPOST_1
+2019-12-17 19:44:02.807  INFO 3256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-17 19:44:02.809  INFO 3256 --- [restartedMain] c.v.p.PlantRecognitionApplication        : Started PlantRecognitionApplication in 7.63 seconds (JVM running for 9.416)
+2019-12-17 19:44:06.767  INFO 3256 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-17 19:44:06.770  INFO 3256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-17 19:44:06.786  INFO 3256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms

@@ -14,13 +14,13 @@ public class CommentService {
     @Resource
     private CommentRepository commentRepository;
 
-    public String insertComment(long tid,String email, String content){
-        Comment comment=Comment.builder().tid(tid).email(email).content(content).build();
+    public String insertComment(long tid, String email, String content) {
+        Comment comment = Comment.builder().tid(tid).email(email).content(content).build();
         commentRepository.save(comment);
         return "success";
     }
 
-    public List<Comment> getComments(long tid){
+    public List<Comment> getComments(long tid) {
         return commentRepository.findByTidOrderByCid(tid);
     }
 }

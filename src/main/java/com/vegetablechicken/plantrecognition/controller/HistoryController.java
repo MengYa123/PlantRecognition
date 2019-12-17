@@ -29,4 +29,16 @@ public class HistoryController {
 
         return historyService.recommendPlants(email,count);
     }
+
+    @GetMapping("/getRecommendClass")
+    @ApiOperation(value = "获取对应的推荐类别", notes ="根据查看的历史记录推荐对应的类别", tags = "Recommend", httpMethod = "GET")
+    public List<String> getRecommendClass(@RequestParam("email") String email, @RequestParam("count") int count){
+        return historyService.recommendPlantsClass(email,count);
+    }
+
+    @GetMapping("/getRecommendPlant")
+    @ApiOperation(value = "根据类别来进行推荐植物", notes = "根据类别以及用户的浏览记录来进行植物的推荐", tags = "Recommend", httpMethod = "GET")
+    public List<ReducePlantsResponse> getRecommendClassPlant(@RequestParam("email") String email, @RequestParam("kind") String kind, @RequestParam("count") int count){
+        return historyService.getRecommendClassPlant(email, kind, count);
+    }
 }

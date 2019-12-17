@@ -41,23 +41,17 @@ public class PlantService {
     @Autowired
     private HistoryService historyService;
 
-    Random ra =new Random();
+    Random ra = new Random();
 
-    public PlantSearchResponse searchPlant(String email,String name){
+    public PlantSearchResponse searchPlant(String email, String name) {
         //do sth
         return null;
     }
 
-    public Plant getPlant(String email,long pid){
-        Plant plant=plantRepository.findByPid(pid);
-        historyService.insertHistory(email,plant.getPid(),plant.getName(),plant.getKind(),plant.getPic());//添加到查询历史记录里面
-        new Thread(){
-            @Override
-            public void run() {
-                historyService.updateRecommend(email);
-            }
-        }.start();
-
+    public Plant getPlant(String email, long pid) {
+        Plant plant = plantRepository.findByPid(pid);
+        historyService.insertHistory(email, plant.getPid(), plant.getName(), plant.getKind(), plant.getPic());//添加到查询历史记录里面
+        new Thread(() -> historyService.updateRecommend(email)).start();
         return plant;
     }
 
@@ -93,33 +87,33 @@ public class PlantService {
         return Method.ReducePlant(plants1);
     }*/
 
-    public List<ReducePlantsResponse> getSimplePlantByKind(String email, String kind){
-        List<Plant> plants=plantRepository.findByKind(kind);
+    public List<ReducePlantsResponse> getSimplePlantByKind(String email, String kind) {
+        List<Plant> plants = plantRepository.findByKind(kind);
         return Method.ReducePlant(plants);
     }
 
-    public List<ReducePlantsResponse> getPlantData(String name){
+    public List<ReducePlantsResponse> getPlantData(String name) {
         String url = String.format("http://db.kib.ac.cn/CNFlora/SearchEngine.aspx?q=%s", URLEncoder.encode(name));
         List<Plant> plantList = new ArrayList<>();
         Plant plant;
         try {
             Document document = Jsoup.connect(url).get();
-            for (Element element: document.getElementsByTag("tbody").get(0).children()){
-                if (element.children().get(0).text().equals("所在卷")){
+            for (Element element : document.getElementsByTag("tbody").get(0).children()) {
+                if (element.children().get(0).text().equals("所在卷")) {
                     continue;
                 }
-                if (element.children().get(0).text().trim().equals("查无结果")){
+                if (element.children().get(0).text().trim().equals("查无结果")) {
                     break;
                 }
                 System.out.println(element);
-                String plantname =element.children().get(3).text();
-                List<Plant> isExist =plantRepository.findByName(plantname);
-                if(!isExist.isEmpty()) plant=isExist.get(0);//如果数据库已存在该植物则用数据库的数据
+                String plantname = element.children().get(3).text();
+                List<Plant> isExist = plantRepository.findByName(plantname);
+                if (!isExist.isEmpty()) plant = isExist.get(0);//如果数据库已存在该植物则用数据库的数据
                 else {//数据库没有就去查询
                     String detail = getPlantDetail(element.children().get(4).child(0).attr("href"));
                     String plantImageUrl = getPlantImageUrl(element.children().get(3).text());
-                    String plantkind=element.children().get(1).text();
-                    if(plantkind.equals("")) plantkind=plantname;
+                    String plantkind = element.children().get(1).text();
+                    if (plantkind.equals("")) plantkind = plantname;
                     plant = Plant.builder().kind(plantkind).name(plantname).detail(detail).pic(plantImageUrl).build();
 
                     plantRepository.save(plant);
@@ -131,8 +125,9 @@ public class PlantService {
         }
         return Method.ReducePlant(plantList);
     }
-    public String getPlantDetail(String url){
-        url = String.format("http://db.kib.ac.cn/CNFlora/%s",url);
+
+    public String getPlantDetail(String url) {
+        url = String.format("http://db.kib.ac.cn/CNFlora/%s", url);
         Connection connection = Jsoup.connect(url);
         String result = null;
         try {
@@ -143,7 +138,7 @@ public class PlantService {
         return result;
     }
 
-    public static String getPlantImageUrl(String name){
+    public static String getPlantImageUrl(String name) {
         /*String url = String.format("http://www.plant.csdb.cn/api.php?ntype=chname&name=%s",name);
         try {
             Document document = Jsoup.connect(url).get();
@@ -157,10 +152,10 @@ public class PlantService {
             e.printStackTrace();
             return null;
         }*/
-        int number=5;
+        int number = 5;
         int timeOut = 5000;
-        String url = "http://image.baidu.com/search/avatarjson?tn=resultjsonavatarnew&ie=utf-8&word=" + name + "&cg=star&pn=" + 0 * 30 + "&rn="+5+"&itg=0&z=0&fr=&width=&height=&lm=-1&ic=0&s=0&st=-1&gsm=" + Integer.toHexString(0 * 30);
-        Document document = null;
+        String url = "http://image.baidu.com/search/avatarjson?tn=resultjsonavatarnew&ie=utf-8&word=" + name + "&cg=star&pn=" + 0 + "&rn=" + 5 + "&itg=0&z=0&fr=&width=&height=&lm=-1&ic=0&s=0&st=-1&gsm=" + Integer.toHexString(0);
+        Document document;
         try {
             document = Jsoup.connect(url).data("query", "Java")//请求参数
                     .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")//设置urer-agent  get();
@@ -174,24 +169,26 @@ public class PlantService {
     }
 
     private static String dealResult(String xmlSource) {
-        String imageURL=new String();
+        String imageURL = "";
         xmlSource = StringEscapeUtils.unescapeHtml3(xmlSource);
         String reg = "objURL\":\"http://.+?\\.(gif|jpeg|png|jpg|bmp|jfif)";
         Pattern pattern = Pattern.compile(reg);
         Matcher m = pattern.matcher(xmlSource);
-        if (m.find()) {
-            imageURL= m.group().substring(9);
-            if(imageURL==null || "".equals(imageURL)){
-                imageURL= "http://qnimg.zowoyoo.com/img/15463/1509533934407.jpg";
+        while (m.find()) {
+
+            imageURL = m.group().substring(9);
+            String reg2 = ".*fromURL.*";
+            if (imageURL.matches(reg2)) continue;
+            if ("".equals(imageURL)) {
+                imageURL = "http://qnimg.zowoyoo.com/img/15463/1509533934407.jpg";
             }
+            break;
         }
         return imageURL;
     }
 
 
-
-
-    public List<ReducePlantsResponse> searchPlant(String name){
+    public List<ReducePlantsResponse> searchPlant(String name) {
         return getPlantData(name);
     }
 

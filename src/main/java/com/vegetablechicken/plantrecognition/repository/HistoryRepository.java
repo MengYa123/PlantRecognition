@@ -8,7 +8,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface HistoryRepository  extends PagingAndSortingRepository<History,String> {
-    public List<History> findByEmailOrderByHidDesc(String email);
-    public History findByHid(long hid);
-    public void  deleteByHid(long hid);
+   List<History> findByEmailOrderByHidDesc(String email);
+   History findByHid(long hid);
+   void  deleteByHid(long hid);
+    List<History> findByEmailAndKind(String email, String kind);
 }

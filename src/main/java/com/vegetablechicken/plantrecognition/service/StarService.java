@@ -20,35 +20,35 @@ public class StarService {
     @Autowired
     private UserRepository userRepository;
 
-    public String starSomeone(String firstEmail,String secondEmail){
-        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) != null){
+    public String starSomeone(String firstEmail, String secondEmail) {
+        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) != null) {
             return "star already!";
         }
-        Star star = new Star(firstEmail,secondEmail);
+        Star star = new Star(firstEmail, secondEmail);
         starRepository.save(star);
         return "star " + secondEmail + " success!";
     }
 
-    public String unstarSomeone(String firstEmail,String secondEmail){
+    public String unstarSomeone(String firstEmail, String secondEmail) {
         Star star = starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail);
-        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) == null){
+        if (starRepository.findByEmailFirstAndAndEmailSecond(firstEmail, secondEmail) == null) {
             return "not stared yet!";
         }
         starRepository.delete(star);
         return "unstar " + secondEmail + " success!";
     }
 
-    public List<User> getStarList(String email){
+    public List<User> getStarList(String email) {
         List<Star> starList = starRepository.findAllByEmailFirst(email);
         return getUsersInfoList(starList);
     }
 
-    public List<User> getFollowerList(String email){
+    public List<User> getFollowerList(String email) {
         List<Star> starList = starRepository.findAllByEmailSecond(email);
         return getUsersInfoList(starList);
     }
 
-    public List<User> getUsersInfoList(List<Star> starList){
+    public List<User> getUsersInfoList(List<Star> starList) {
         List<User> emailList = new ArrayList<>();
         starList.forEach(star -> {
             User user = userRepository.findByEmail(star.getEmailSecond());

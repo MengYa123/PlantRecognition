@@ -2,9 +2,7 @@ package com.vegetablechicken.plantrecognition.controller;
 
 import com.vegetablechicken.plantrecognition.Method.Method;
 import com.vegetablechicken.plantrecognition.entity.User;
-import com.vegetablechicken.plantrecognition.request.UserNameRequest;
-import com.vegetablechicken.plantrecognition.request.UserRequest;
-import com.vegetablechicken.plantrecognition.request.UserSignatureRequset;
+import com.vegetablechicken.plantrecognition.request.*;
 import com.vegetablechicken.plantrecognition.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -66,14 +64,14 @@ public class UserController {
 
     @PostMapping("/updateAvatar")
     @ApiOperation(value = "修改头像", notes = "修改头像\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
-    public String uploadAvatar(@RequestParam("email")String email,@RequestParam("file") MultipartFile file){
-        return userService.updateAvatar(email,Method.uploadPic(file));
+    public String uploadAvatar(@RequestBody UserAvatarRequest userAvatarRequest){
+        return userService.updateAvatar(userAvatarRequest.getEmail(),userAvatarRequest.getAvatar());
     }
 
     @PostMapping("/updateBackground")
     @ApiOperation(value = "修改背景图", notes = "修改背景图\n\rupdate succeed\n\rfailed", tags = "User",httpMethod = "POST")
-    public String updateBackground(@RequestParam("email")String email,@RequestParam("file") MultipartFile file){
-        return userService.updateBackground(email,Method.uploadPic(file));
+    public String updateBackground(@RequestBody UserBackgroundRequest userBackgroundRequest){
+        return userService.updateBackground(userBackgroundRequest.getEmail(),userBackgroundRequest.getBackground());
     }
 
 

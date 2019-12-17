@@ -30,13 +30,20 @@ public class PlantController {
     public Plant getPlant(@RequestParam String email,@RequestParam long pid){
         return plantService.getPlant(email,pid);
     }
+/*
+    @GetMapping("/getPlantByKind")
+    @ApiOperation(value = "得到植物", notes = "通过类别得到推荐植物简略信息", tags = "Plant",httpMethod = "GET")
+    public List<ReducePlantsResponse> getPlantByKind(@RequestParam String email, @RequestParam String kind,@RequestParam int count){
 
-    @GetMapping("/getPlants")
-    @ApiOperation(value = "得到植物", notes = "通过类别得到多个植物简略信息", tags = "Plant",httpMethod = "GET")
-    public List<ReducePlantsResponse> getPlants(@RequestParam String email, @RequestParam String kind){
-
-        return plantService.getSimplePlantByKind(email,kind);
+        return plantService.getPlantByKind(email,kind,count);
     }
+
+    @GetMapping("/getKinds")
+    @ApiOperation(value = "得到类别", notes = "得到推荐类别", tags = "Plant",httpMethod = "GET")
+    public List<ReducePlantsResponse> getKinds(@RequestParam String email, @RequestParam int count){
+
+        return plantService.getRecommendKind(email,count);
+    }*/
 
     @GetMapping("/getPlantInfo")
     @ApiOperation(value = "得到植物", notes = "通过植物名得到植物信息", tags = "Plant", httpMethod = "GET")

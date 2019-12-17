@@ -175,7 +175,7 @@ public class HistoryService {
             count = historyList.size();
         }
         Stream<History> stream = historyList.stream();
-        if (count > 0){
+        if (historyList.size() > 2 * count){
             stream = stream.skip(random.nextInt(historyList.size() - count));
         }
         stream.limit(count).forEach(history -> result.add(new ReducePlantsResponse(history.getPid(), history.getName(), history.getPic(), history.getKind())));

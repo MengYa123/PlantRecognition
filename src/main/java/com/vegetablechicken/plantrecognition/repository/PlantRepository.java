@@ -15,9 +15,7 @@ public interface PlantRepository extends PagingAndSortingRepository<Plant,String
     public Plant findByPid(long pid);
     public List<Plant> findByKind(String kind);
     public List<Plant> findByName(String name);
-
-    @Query(value = "select kind from plant group by kind")
-    List<String> findAllKind();
+    List<Plant> findAll();
 
    // @Query(value="select * from plant where name like '%科' ")
    // public List<Plant> findByNameLike();

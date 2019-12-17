@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -186,11 +187,20 @@ public class HistoryService {
     }
 
     public List<String> getRandomClass(int count){
-        List<String> list = plantRepository.findAllKind();
+        List<String> list = findAllKind();
         if (count > list.size()){
             count = list.size();
         }
         Collections.shuffle(list);
         return list.subList(0, count);
+    }
+
+    public List<String> findAllKind(){
+        List<Plant> plantList = plantRepository.findAll();
+        Map<String, Integer> map = new HashMap<>();
+        plantList.forEach(plant -> {
+            map.put(plant.getKind(),0);
+        });
+        return new ArrayList<>(map.keySet());
     }
 }
